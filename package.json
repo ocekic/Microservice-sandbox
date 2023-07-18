@@ -1,0 +1,22 @@
+{
+  "name": "microservice-sandbox",
+  "version": "1.0.0",
+  "description": "A sandbox for learning nodejs microservices",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ocekic/Microservice-sandbox.git"
+  },
+  "author": "Osman Ali CEKIC",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ocekic/Microservice-sandbox/issues"
+  },
+  "homepage": "https://github.com/ocekic/Microservice-sandbox#readme",
+  "devDependencies": {
+    "typescript": "^5.1.6"
+  }
+}
