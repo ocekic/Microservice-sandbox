@@ -48,3 +48,20 @@ What is ES module ?
 ```js
 import * as fs from 'fs';
 ```
+3. Create a tsconfig.json file
+```json
+{
+  "compilerOptions": {
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "target": "ES2020",
+    "sourceMap": true,
+    "outDir": "dist",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+    "include": ["src/**/*"],
+}
+```
