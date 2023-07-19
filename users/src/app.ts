@@ -1,4 +1,5 @@
 import * as express from 'express'
+import { connectToDB, closeDBConnection } from './db';
 
 class App {
   public express
@@ -6,6 +7,15 @@ class App {
   constructor () {
     this.express = express()
     this.mountRoutes()
+    this.connectToDB();
+  }
+  
+  private async connectToDB(){
+    try{
+      await connectToDB();
+    } catch(error){
+      console.error("Error connection to the database :", error);
+    }
   }
 
   private mountRoutes (): void {
@@ -16,6 +26,15 @@ class App {
       })
     })
     this.express.use('/', router)
+  }
+
+  public async closeDBConnection() {
+    try {
+      await closeDBConnection();
+    } catch (error) {
+      console.error("Error closing the database connection:", error);
+      // Handle the error as you see fit
+    }
   }
 }
 
