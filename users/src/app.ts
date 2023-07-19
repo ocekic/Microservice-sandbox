@@ -1,5 +1,5 @@
 import * as express from 'express'
-import { connectToDB, closeDBConnection } from './db';
+import { connectToDB, closeDBConnection } from './database/db';
 
 class App {
   public express
