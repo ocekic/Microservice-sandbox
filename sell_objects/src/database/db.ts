@@ -1,6 +1,8 @@
 import * as dotenv from 'dotenv';
 const { MongoClient, ServerApiVersion } = require('mongodb');
 
+
+
 // loading the env variable
 dotenv.config();
 
