@@ -1,9 +1,7 @@
 const controller = require('../controllers/thing.controller')
-const express = require('express');
 
-const router = express.Router({ mergeParams: true});
 
-router.get('/thing', controller.getThings);
-router.post('/thing', controller.createThing);
-
-module.exports = router;
+module.exports = function(app) {
+    app.get('/thing', controller.getThings);
+    app.post('/thing', controller.createThing);
+};

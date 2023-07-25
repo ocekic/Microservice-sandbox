@@ -11,9 +11,7 @@ app.get('/', (req, res) => {
   res.json({ message : 'Thing microservice'});
 })
 
-const ThingRoute = require('./routes/thing.routes');
-
-app.use("/thing",ThingRoute);
+require('./routes/thing.routes')(app);
 
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -21,6 +19,5 @@ app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
   next();
 });
-
 
 module.exports = app;
