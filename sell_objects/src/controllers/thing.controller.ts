@@ -1,6 +1,7 @@
 import Thing from '../models/things.model';
 
 exports.createThing = async (req, res) => {
+    
     const thing = new Thing({
         title: req.body.title,
         description: req.body.description,
@@ -8,19 +9,18 @@ exports.createThing = async (req, res) => {
         userId: req.body.userId,
         price: req.body.price,
     });
-    await thing.save((err ,thing) => {
-        if(err){
-            res.status(500).send(err);
-        }
+
+    const Thingsave = await thing.save().then(thing => {
         res.status(200).json(thing);
+    }).catch((err) => {
+        res.status(500).send(err);
     });
 }
 
 exports.getThings = async (req, res) => {
-    await Thing.find((err, thing) =>{
-        if (err){
-            res.status(404).send(err);
-        }
-        res.status(200).json(thing)
-    })
+    await Thing.find({}).then((things) => {
+        res.status(200).json(things);
+    }).catch((err) => {
+        res.status(500).send(err);
+    });
 }
