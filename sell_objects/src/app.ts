@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
   res.json({ message : 'Thing microservice'});
 })
 
-import ThingRoute from './routes/thing.routes'
+const ThingRoute = require('./routes/thing.routes');
 
 app.use("/thing",ThingRoute);
 
